@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Rail Fence</title>
+<meta name="viewport" content="width=320; initial-scale=1.0; user-scalable=no"/>
+</head>
+<body>
+<h2>Key</h2>
+<p>A number between 2 and one less than the length of the message. A key that is 
+equal to or greater than the length of the message 
+(such the key 10 for the message "hellothere", which is 10 letters long) 
+will make the ciphertext the same as the plaintext (which kind of defeats the purpose).</p>
+<h2>History and Facts</h2>
+<p>Many ciphers are <i>substitution</i> ciphers, where a message is hidden by 
+replacing each letter of the message with a different letter. In contrast, 
+the rail fence cipher is a <i>transposition</i> cipher, so none of the letters 
+get replaced, their order just gets mixed up. The reordering of the letters is done
+systematically so that the process can be reversed to recover the original message.</p>
+<p>The rail fence cipher follows one of the oldest known methods of encryption, 
+which was used by the Spartans in the fifth century BC. The Spartans
+would wrap a leather strip around a stick with a specific diameter called a scytale 
+(rhymes with Italy), and then write the message across the wrapped strip. When the strip was
+unwound, it looked like a meaningless list of letters. When the receiver of the message 
+wrapped the strip around his own scytale, the message could be easily deciphered.</p>
+<p><img alt="Like a Scytale" src="railfence.jpg"/></p>
+<p>There are a couple of variations of the rail fence cipher. One uses a zig-zag pattern 
+when rearranging the letters, while the other stacks the letters into straight columns.
+Cipher Suite uses the latter method, which is more similar to how a scytale works.</p>
+<h2>Level of Security</h2>
+<p>General encryption systems have two parts: the <b>algorithm</b> (which says what steps 
+to follow to encipher or decipher a message), and the <b>key</b> 
+(which is a secret used in the algorithm
+that must be the same when enciphering and deciphering a message). Ideally, it doesn't 
+matter if a potential code breaker knows the algorithm
+used to encipher a message. So long as the key remains a secret, the message is safe 
+(or as safe as the algorithm can make it).
+This is not the case with the rail fence cipher. There aren't very many available keys, 
+so if someone knows that a message
+was enciphered using rail fence, they can just try each key by hand.</p>
+<p><a href="http://en.wikipedia.org/wiki/Rail_Fence_Cipher">Learn more on Wikipedia</a></p>
+</body>
+</html>

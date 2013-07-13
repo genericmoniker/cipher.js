@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <!-- Docs: http://pivotal.github.com/jasmine -->
+    <title>ciphersuite Test Runner</title>
+    <link rel="stylesheet" type="text/css" href="../../../Jasmine/lib/jasmine.css" />
+</head>
+
+<!-- Test Framework -->
+<script type="text/javascript" src="../../../Jasmine/lib/jasmine-0.10.3.js"></script>
+<script type="text/javascript" src="../../../Jasmine/lib/TrivialReporter.js"></script>
+<script type="text/javascript" src="../../../Jasmine/lib/consolex.js"></script>
+
+<!-- Code to Test -->
+<script type="text/javascript" src="../ciphersuite/app/models/algorithm.js"></script>
+<script type="text/javascript" src="../ciphersuite/app/models/caesar.js"></script>
+<script type="text/javascript" src="../ciphersuite/app/models/playfair.js"></script>
+<script type="text/javascript" src="../ciphersuite/app/models/railfence.js"></script>
+<script type="text/javascript" src="../ciphersuite/app/models/vigenere.js"></script>
+
+<!-- Unit Tests -->
+<script type="text/javascript">
+    jasmine.include('algorithm.test.js', true);
+    jasmine.include('caesar.test.js', true);
+    jasmine.include('playfair.test.js', true);
+    jasmine.include('railfence.test.js', true);
+    jasmine.include('vigenere.test.js', true);
+</script>
+
+<body>
+    <script type="text/javascript">
+        var jasmineEnv = jasmine.getEnv();
+        jasmineEnv.reporter = new jasmine.TrivialReporter();
+        jasmineEnv.execute();
+</script>
+</body>
+</html>

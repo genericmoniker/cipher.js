@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Playfair</title>
+<meta name="viewport" content="width=320; initial-scale=1.0; user-scalable=no"/>
+</head>
+<body>
+<h2>Key</h2>
+<p>A word or phrase or random string of letters (but letters only, no spaces, numbers or punctuation). 
+Repeating letters in the key have no effect, so the key "rubber" would be the same as "rube".</p>
+<h2>History and Facts</h2>
+<p>Although this cipher was invented by Charles Wheatstone in 1854, his friend Lyon Playfair, a scientist and
+politician, successfully promoted its use to the British parliment, so it became known as the Playfair cipher.</p>
+<p>The Playfair cipher uses pairs of letters during encryption, which means that plaintext letters are 
+substituted based on the letters that are adjacent to them. For example, the letter <b>e</b> in the word "he" would be
+enciphered differently than the <b>e</b> in "me" because they have different letters right before them (an <b>h</b> in one
+case and an <b>m</b> in the other). This makes messages harder to attack using frequency analysis.</p>
+<p>The way this cipher works, deciphered text may not match the original plaintext exactly -- it may
+have extra <b>x</b>'s throughout the message. These can be ignored pretty easily when reading, though.
+The cipher also treats the letters <b>i</b> and <b>j</b> interchangeably, so some <b>j</b>'s may really be <b>i</b>'s.
+Finally, this implementation automatically strips spaces and punctuation when enciphering.   
+<h2>Level of Security</h2>
+<p>It is possible for a skilled cryptanalyst to decipher a Playfair enciphered message using just
+pencil and paper. There are also some brute force methods more suited to a computer, which don't
+require so much skill or patience.</p>
+<p><a href="http://en.wikipedia.org/wiki/Playfair_cipher">Learn more on Wikipedia</a></p>
+</body>
+</html>
