@@ -2,37 +2,57 @@
   "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <!-- Docs: http://pivotal.github.com/jasmine -->
-    <title>ciphersuite Test Runner</title>
-    <link rel="stylesheet" type="text/css" href="../../../Jasmine/lib/jasmine.css" />
+  <title>Cipher.js Spec Runner</title>
+
+  <link rel="stylesheet" type="text/css" href="../lib/jasmine-1.3.1/jasmine.css">
+  <script type="text/javascript" src="../lib/jasmine-1.3.1/jasmine.js"></script>
+  <script type="text/javascript" src="../lib/jasmine-1.3.1/jasmine-html.js"></script>
+
+  <!-- include source files here... -->
+  <script type="text/javascript" src="../src/algorithm.js"></script>
+  <script type="text/javascript" src="../src/caesar.js"></script>
+  <script type="text/javascript" src="../src/playfair.js"></script>
+  <script type="text/javascript" src="../src/railfence.js"></script>
+  <script type="text/javascript" src="../src/vigenere.js"></script>
+
+  <!-- include spec files here... -->
+  <script type="text/javascript" src="../test/algorithm.test.js"></script>
+  <script type="text/javascript" src="../test/caesar.test.js"></script>
+  <script type="text/javascript" src="../test/playfair.test.js"></script>
+  <script type="text/javascript" src="../test/railfence.test.js"></script>
+  <script type="text/javascript" src="../test/vigenere.test.js"></script>
+
+  <script type="text/javascript">
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var htmlReporter = new jasmine.HtmlReporter();
+
+      jasmineEnv.addReporter(htmlReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return htmlReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+        if (currentWindowOnload) {
+          currentWindowOnload();
+        }
+        execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+    })();
+  </script>
+
 </head>
 
-<!-- Test Framework -->
-<script type="text/javascript" src="../../../Jasmine/lib/jasmine-0.10.3.js"></script>
-<script type="text/javascript" src="../../../Jasmine/lib/TrivialReporter.js"></script>
-<script type="text/javascript" src="../../../Jasmine/lib/consolex.js"></script>
-
-<!-- Code to Test -->
-<script type="text/javascript" src="../ciphersuite/app/models/algorithm.js"></script>
-<script type="text/javascript" src="../ciphersuite/app/models/caesar.js"></script>
-<script type="text/javascript" src="../ciphersuite/app/models/playfair.js"></script>
-<script type="text/javascript" src="../ciphersuite/app/models/railfence.js"></script>
-<script type="text/javascript" src="../ciphersuite/app/models/vigenere.js"></script>
-
-<!-- Unit Tests -->
-<script type="text/javascript">
-    jasmine.include('algorithm.test.js', true);
-    jasmine.include('caesar.test.js', true);
-    jasmine.include('playfair.test.js', true);
-    jasmine.include('railfence.test.js', true);
-    jasmine.include('vigenere.test.js', true);
-</script>
-
 <body>
-    <script type="text/javascript">
-        var jasmineEnv = jasmine.getEnv();
-        jasmineEnv.reporter = new jasmine.TrivialReporter();
-        jasmineEnv.execute();
-</script>
 </body>
 </html>

@@ -183,7 +183,7 @@ Playfair.prototype.printDigraphs = function(digraphs) {
 	var result = "";
 
 	for (var i = 0; i < digraphs.length; ++i) {
-		result += String.concat(digraphs[i].left, digraphs[i].right);
+		result += (digraphs[i].left + digraphs[i].right);
 		if (i + 1 < digraphs.length) {
 			result += ' ';
 		}
