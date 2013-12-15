@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="cipherApp">
+<head>
+    <title>cipher.js app</title>
+    <link rel="stylesheet" href="app.css"/>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <p>{{'Test binding'}}</p>
+
+    <div ng-controller="AlgorithmListCtrl">
+        <ul>
+            <li ng-repeat="algorithm in algorithms">
+              {{algorithm.name}}
+            </li>
+        </ul>
+    </div>
+
+    <!-- angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+
+    <!-- app -->
+    <!--script src="app.js"></script-->
+    <script src="controllers.js"></script>
+
+    <!-- cipher.js -->
+    <script src="../src/algorithm.js"></script>
+    <script src="../src/caesar.js"></script>
+    <script src="../src/playfair.js"></script>
+    <script src="../src/railfence.js"></script>
+    <script src="../src/vigenere.js"></script>
+
+</body>
+</html>
