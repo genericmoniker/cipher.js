@@ -5,16 +5,50 @@
     <link rel="stylesheet" href="app.css"/>
     <meta charset="utf-8" />
 </head>
-<body>
+<body ng-controller="Controller">
 
-    <p>{{'Test binding'}}</p>
+    <h1>cipher.js</h1>
 
-    <div ng-controller="AlgorithmListCtrl">
-        <ul>
-            <li ng-repeat="algorithm in algorithms">
-              {{algorithm.name}}
-            </li>
-        </ul>
+    <h2>Algorithm</h2>
+    <div>
+        <label>
+            <select ng-model="algorithm" ng-options="a.name for a in algorithms">
+            </select>
+        </label>
+    </div>
+
+    <h2>Key</h2>
+    <div>
+        <label>
+            <input name="key" value="{{key}}" placeholder="{{algorithm.keyHint}}">
+        </label>
+    </div>
+
+    <h2>Direction</h2>
+    <div>
+        <label>
+            <input type="radio" ng-model="direction" value="encipher">
+            Encipher
+        </label>
+        <label>
+            <input type="radio" ng-model="direction" value="decipher">
+            Decipher
+        </label>
+    </div>
+
+    <h2>Input</h2>
+    <div>
+        <label>
+            <textarea name="input">{{input}}</textarea>
+        </label>
+    </div>
+
+    <h2>Output</h2>
+    <div>
+        <label>
+            <textarea name="output" readonly>{{output()}}
+            </textarea>
+        </label>
     </div>
 
     <!-- angular -->
