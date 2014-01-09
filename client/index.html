@@ -20,7 +20,7 @@
     <h2>Key</h2>
     <div>
         <label>
-            <input name="key" value="{{key}}" placeholder="{{algorithm.keyHint}}">
+            <input name="key" ng-model="key" placeholder="{{algorithm.keyHint}}">
         </label>
     </div>
 
@@ -39,15 +39,14 @@
     <h2>Input</h2>
     <div>
         <label>
-            <textarea name="input">{{input}}</textarea>
+            <textarea name="input" ng-model="input">{{input}}</textarea>
         </label>
     </div>
 
     <h2>Output</h2>
     <div>
         <label>
-            <textarea name="output" readonly>{{output()}}
-            </textarea>
+            <textarea name="output" readonly>{{output}}</textarea>
         </label>
     </div>
 
