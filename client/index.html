@@ -2,52 +2,43 @@
 <html lang="en" ng-app="cipherApp">
 <head>
     <title>cipher.js app</title>
-    <link rel="stylesheet" href="app.css"/>
+    <link rel="stylesheet" href="style/css/app.css"/>
     <meta charset="utf-8" />
 </head>
 <body ng-controller="Controller">
+<div id="container">
 
     <h1>cipher.js</h1>
 
-    <h2>Algorithm</h2>
-    <div>
-        <label>
-            <select ng-model="algorithm" ng-options="a.name for a in algorithms">
-            </select>
-        </label>
-    </div>
+    <div class="form">
+        <div class="columns">
+            <div class="column">
+                <label for="algorithm">Algorithm</label><br>
+                <select id="algorithm" ng-model="algorithm" ng-options="a.name for a in algorithms"></select>
+            </div>
 
-    <h2>Key</h2>
-    <div>
-        <label>
-            <input name="key" ng-model="key" placeholder="{{algorithm.keyHint}}">
-        </label>
-    </div>
+            <div class="column">
+                <label for="key">Key</label><br>
+                <input id="key" type="text" ng-model="key" placeholder="{{algorithm.keyHint}}">
+            </div>
+        </div>
 
-    <h2>Direction</h2>
-    <div>
-        <label>
-            <input type="radio" ng-model="direction" value="encipher">
-            Encipher
-        </label>
-        <label>
-            <input type="radio" ng-model="direction" value="decipher">
-            Decipher
-        </label>
-    </div>
+        <div class="clear">
+            <input id="encipher" type="radio" ng-model="direction" value="encipher">
+            <label for="encipher">Encipher</label>
+            <input id="decipher" type="radio" ng-model="direction" value="decipher">
+            <label for="decipher">Decipher</label>
+        </div>
 
-    <h2>Input</h2>
-    <div>
-        <label>
-            <textarea name="input" ng-model="input">{{input}}</textarea>
-        </label>
-    </div>
+        <div class="clear">
+            <label for="input">Input</label><br>
+            <textarea id="input" name="input" ng-model="input">{{input}}</textarea>
+        </div>
 
-    <h2>Output</h2>
-    <div>
-        <label>
-            <textarea name="output" readonly>{{output}}</textarea>
-        </label>
+        <div class="clear">
+            <label for="output">Output</label><br>
+            <textarea id="output" name="output" readonly>{{output}}</textarea>
+        </div>
     </div>
 
     <!-- angular -->
@@ -63,6 +54,6 @@
     <script src="../src/playfair.js"></script>
     <script src="../src/railfence.js"></script>
     <script src="../src/vigenere.js"></script>
-
+</div>
 </body>
 </html>
