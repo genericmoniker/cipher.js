@@ -31,7 +31,7 @@ body {
 #container {
     background: url('../images/container.png') no-repeat;
     width: 754px;
-    height: 370px;
+    height: 580px;
     margin: 20px auto;
     padding: 50px 0;
     overflow: hidden;
@@ -49,7 +49,6 @@ body {
     }
 
     #container input[type=text], #container select, #container textarea {
-        background: url('../images/input.png') no-repeat;
         color: #888;
         border: 1px solid #ccc;
         font-family: Cantarell, Verdana, sans-serif;
@@ -64,18 +63,21 @@ body {
     }
 
     #container input[type=text] {
-        width: 250px;
+        background: url('../images/input.png') no-repeat;
+        width: 270px;
         height: 35px;
     }
 
     #container select {
+        background: url('../images/input.png') no-repeat;
         width: 300px;
         height: 35px;
     }
 
     #container textarea {
-        width: 580px;
-        height: 50px;
+        background: url('../images/textarea.png') no-repeat;
+        width: 610px;
+        height: 70px;
     }
 
     #container input.error { border: 1px solid red; }
@@ -91,10 +93,11 @@ body {
 
     #container label {
         color: #666;
-        font-size: 12px;
+        font-size: 15px;
         font-weight: bold;
         line-height: 14px;
         /*float: right;
         margin: 23px -25px;
         width: 270px;*/
     }
+
